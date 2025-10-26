@@ -8,6 +8,8 @@
 // -------------------------
 const menuToggle = document.createElement("span");
 menuToggle.classList.add("menu-toggle");
+menuToggle.setAttribute("tabindex", "0");
+menuToggle.setAttribute("aria-expanded", "false");
 menuToggle.textContent = "☰";
 
 const nav = document.querySelector("nav");
@@ -15,9 +17,27 @@ if (nav && !document.querySelector(".menu-toggle")) {
   nav.insertBefore(menuToggle, nav.querySelector("ul"));
 }
 
-menuToggle?.addEventListener("click", () => {
+function toggleMenu() {
   const menu = document.querySelector("nav ul");
+  menuToggle.setAttribute(
+    "aria-expanded",
+    menuToggle.getAttribute("aria-expanded") === "true" ? "false" : "true"
+  );
   menu?.classList.toggle("active");
+}
+
+menuToggle?.addEventListener("click", toggleMenu);
+
+menuToggle?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    toggleMenu();
+  } else if (
+    e.key === "Escape" &&
+    menuToggle.getAttribute("aria-expanded") === "true"
+  ) {
+    toggleMenu();
+  }
 });
 
 // -------------------------
