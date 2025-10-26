@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "mkdirp dist/css dist/js dist/assets/images",
     "minify:css": "cleancss -o dist/css/style.min.css css/style.css",
-    "minify:js": "terser js/main.js -o dist/js/main.min.js -c -m && terser js/formValidation.js -o dist/js/formValidation.min.js -c -m && terser js/masks.js -o dist/js/masks.min.js -c -m",
+    "minify:js": "terser js/main.js -o dist/js/main.min.js -c -m && terser js/formValidation.js -o dist/js/formValidation.min.js -c -m && terser js/masks.js -o dist/js/masks.min.js -c -m && terser js/themeToggle.js -o dist/js/themeToggle.min.js -c -m",
     "update:html": "node scripts/updateHtml.js",
     "minify:html": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true dist/index.html -o dist/index.html && html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true dist/projetos.html -o dist/projetos.html && html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true dist/cadastro.html -o dist/cadastro.html",
     "imagemin": "node scripts/imagemin.js",

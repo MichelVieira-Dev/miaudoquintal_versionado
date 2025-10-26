@@ -16,6 +16,7 @@ htmlFiles.forEach((file) => {
     "js/formValidation.min.js"
   );
   content = content.replace(/js\/masks\.js/g, "js/masks.min.js");
+  content = content.replace(/js\/themeToggle\.js/g, "js/themeToggle.min.js");
 
   // Salva na pasta dist
   fs.writeFileSync(path.join("dist", file), content, "utf-8");
