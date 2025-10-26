@@ -1,0 +1,361 @@
+/* ==========================================================
+   MIAU DO QUINTAL - Design System e Estilos Globais
+   ========================================================== */
+
+/* -----------------------------
+   VARIÁVEIS DO DESIGN SYSTEM
+--------------------------------*/
+:root {
+  /* Paleta de cores */
+  --cor-primaria: #f4a261;
+  --cor-secundaria: #e76f51;
+  --cor-destaque: #2a9d8f;
+  --cor-fundo: #fdf4e3;
+  --cor-texto: #3a2e2a;
+  --cor-branca: #ffffff;
+  --cor-preta: #222222;
+  --cor-cinza: #cccccc;
+
+  /* Tipografia */
+  --fonte-principal: "Poppins", Arial, sans-serif;
+  --fonte-titulo: "Baloo 2", cursive;
+
+  /* Tamanhos de fonte */
+  --fs-xxl: 2.5rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-md: 1.125rem;
+  --fs-sm: 1rem;
+
+  /* Espaçamentos (sistema 8px) */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 48px;
+  --sp-6: 64px;
+
+  /* Bordas */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+
+  /* Sombras */
+  --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* -----------------------------
+   RESET BÁSICO
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* -----------------------------
+   CABEÇALHO E NAVEGAÇÃO
+--------------------------------*/
+header {
+  background-color: var(--cor-primaria);
+  box-shadow: var(--sombra-card);
+  padding: var(--sp-2) var(--sp-3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav img {
+  height: 60px;
+  border-radius: var(--radius-sm);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--sp-3);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-preta);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* -----------------------------
+   CONTEÚDO PRINCIPAL
+--------------------------------*/
+main {
+  padding: var(--sp-4);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-destaque);
+}
+
+h1 {
+  font-size: var(--fs-xxl);
+  margin-bottom: var(--sp-3);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+
+p,
+li,
+label {
+  font-size: var(--fs-md);
+}
+
+/* -----------------------------
+   SEÇÕES E CARDS DE PROJETOS
+--------------------------------*/
+section {
+  margin-bottom: var(--sp-5);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+article {
+  background-color: var(--cor-branca);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  margin-bottom: var(--sp-3);
+  box-shadow: var(--sombra-card);
+}
+
+article h2 {
+  margin-top: 0px !important;
+}
+
+article img {
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--sp-2);
+}
+
+article ul,
+section ul {
+  margin-left: 1rem;
+}
+
+/* Tags e badges */
+.badge {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: var(--fs-sm);
+}
+
+/* -----------------------------
+   FORMULÁRIOS
+--------------------------------*/
+form {
+  background-color: var(--cor-branca);
+  padding: var(--sp-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--sombra-card);
+}
+
+fieldset {
+  border: 2px solid var(--cor-primaria);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+legend {
+  color: var(--cor-destaque);
+  font-weight: bold;
+  font-size: var(--fs-lg);
+  padding: 0 var(--sp-2);
+}
+
+label {
+  display: block;
+  margin-top: var(--sp-2);
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: var(--sp-2);
+  margin-top: var(--sp-1);
+  border: 1px solid var(--cor-cinza);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--cor-secundaria);
+}
+
+button {
+  background-color: var(--cor-destaque);
+  color: var(--cor-branca);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: var(--sp-3);
+}
+
+button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/* -----------------------------
+   COMPONENTES DE FEEDBACK
+--------------------------------*/
+.alert {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: var(--sp-2);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-2);
+}
+
+.toast {
+  position: fixed;
+  bottom: var(--sp-2);
+  right: var(--sp-2);
+  background-color: var(--cor-destaque);
+  color: var(--cor-branca);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--sombra-card);
+  display: none;
+}
+
+/* -----------------------------
+   RODAPÉ
+--------------------------------*/
+footer {
+  background-color: var(--cor-primaria);
+  text-align: center;
+  padding: var(--sp-3);
+  color: var(--cor-preta);
+  font-weight: bold;
+}
+
+/* -----------------------------
+   MENU RESPONSIVO (HAMBÚRGUER)
+--------------------------------*/
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    margin-top: var(--sp-2);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* -----------------------------
+   GRID E FLEXBOX LAYOUTS
+--------------------------------*/
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--sp-3);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+
+/* -----------------------------
+   BREAKPOINTS RESPONSIVOS
+--------------------------------*/
+@media (max-width: 1200px) {
+  main {
+    padding: var(--sp-3);
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: var(--fs-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--fs-lg);
+  }
+  article {
+    padding: var(--sp-2);
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: var(--fs-sm);
+  }
+  nav img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: var(--fs-sm);
+  }
+}
